@@ -23,13 +23,16 @@ class NumsAdapter(val list: MutableList<String>): RecyclerView.Adapter<NumsAdapt
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private var tvNum: TextView
+        private var tvNumLeft: TextView
+        private var tvNumRight: TextView
         init {
-            tvNum = itemView.findViewById(R.id.tv_num)
+            tvNumLeft = itemView.findViewById(R.id.tv_num_left)
+            tvNumRight = itemView.findViewById(R.id.tv_num_right)
         }
 
         fun setNum(num: String) {
-            tvNum.text = num
+            tvNumLeft.text = num
+            tvNumRight.text = num
         }
     }
 }

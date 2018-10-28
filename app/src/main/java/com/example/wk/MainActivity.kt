@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
 import com.example.wk.adapters.NumsAdapter
+import com.example.wk.views.HorizontalLineDecoration
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     fun initRecyclerView() {
         rv_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         val adapter = NumsAdapter(getData())
+        rv_view.addItemDecoration(HorizontalLineDecoration())
         rv_view.adapter = adapter
 
     }
