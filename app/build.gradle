@@ -20,6 +20,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    task doit{
+        copy {
+            from "a_dir"
+            into "b_dir"
+            rename ".*", "wang.txt"
+            print("copy complete")
+        }
+    }
+
+    tasks['preBuild'].dependsOn("doit")
+
 }
 
 dependencies {
